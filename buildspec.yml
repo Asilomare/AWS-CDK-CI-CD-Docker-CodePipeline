@@ -9,7 +9,7 @@ phases:
   pre_build:
     commands:
       - echo dependancies
-      - pip3 install cdk
+      - pip install --upgrade cdk
       - pip3 install Requests
       - pip3 install BeautifulSoup4
       - pip3 install boto3
