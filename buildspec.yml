@@ -9,7 +9,7 @@ phases:
   pre_build:
     commands:
       - echo dependancies
-      - pip install --upgrade cdk
+      - npm install -g aws-cdk@latest
       - pip3 install Requests
       - pip3 install BeautifulSoup4
       - pip3 install boto3
