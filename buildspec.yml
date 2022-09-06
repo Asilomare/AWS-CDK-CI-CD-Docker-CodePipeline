@@ -4,12 +4,14 @@ phases:
     commands:
       # Install packages or any pre-reqs in this phase.
       # Upgrading SAM CLI to latest version
-      - echo nothing
-      - npm install -g aws-cdk@latest
+      - echo npthinjg
+
       
   pre_build:
     commands:
       - echo dependancies
+      - npm install --upgrade nodejs
+      - npm install -g aws-cdk@latest
       - pip3 install Requests
       - pip3 install BeautifulSoup4
       - pip3 install boto3
