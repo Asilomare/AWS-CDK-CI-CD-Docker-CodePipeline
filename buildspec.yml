@@ -7,6 +7,7 @@ phases:
       # Install packages or any pre-reqs in this phase.
       # Upgrading SAM CLI to latest version
       - python3 -m venv .env
+      - npm install --upgrade cdk
       - chmod +x .env/bin/activate
       - . .env/bin/activate
       
@@ -20,7 +21,7 @@ phases:
 
   build:
     commands:
-      - npm run build
+      - npm run cdk deploy
 
   post_build:
     commands:
