@@ -7,14 +7,13 @@ phases:
       # Install packages or any pre-reqs in this phase.
       # Upgrading SAM CLI to latest version
       - python3 -m venv .env
-      - npm install --upgrade cdk
       - chmod +x .env/bin/activate
       - . .env/bin/activate
       
   pre_build:
     commands:
       - echo dependancies
- 
+      - npm install --upgrade cdk
       - pip3 install Requests
       - pip3 install BeautifulSoup4
       - pip3 install boto3
