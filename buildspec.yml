@@ -16,7 +16,6 @@ phases:
 
   build:
     commands:
-      - cd 
       - cdk deploy --force
       # cdk deploy --force #??
 
