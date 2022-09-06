@@ -7,7 +7,6 @@ phases:
       # Install packages or any pre-reqs in this phase.
       # Upgrading SAM CLI to latest version
       - npm install -g aws-cdk
-      - cdk --version
       - python3 -m venv .env
       - chmod +x .env/bin/activate
       - . .env/bin/activate
