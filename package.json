@@ -10,7 +10,7 @@
     "aws-cdk-lib": "2.14.0",
     "@aws-cdk/aws-appsync-alpha": "2.10.0-alpha",
     "constructs": "10.0.0",
-    "jsii": "^1.50.0",
+    "jsii": "^1.67.0",
     "aws-cdk": "^2.14.0"
   }
 }
