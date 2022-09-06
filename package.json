@@ -1,1 +1,16 @@
-
+{
+  "name": "my-package",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "aws-cdk-lib": "^2.14.0",
+    "@aws-cdk/aws-appsync-alpha": "2.10.0-alpha",
+    "constructs": "^10.0.0"
+  },
+  "devDependencies": {
+    "aws-cdk-lib": "2.14.0",
+    "@aws-cdk/aws-appsync-alpha": "2.10.0-alpha",
+    "constructs": "10.0.0",
+    "jsii": "^1.50.0",
+    "aws-cdk": "^2.14.0"
+  }
+}
