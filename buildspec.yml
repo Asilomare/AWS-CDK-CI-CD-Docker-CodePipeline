@@ -10,13 +10,14 @@ phases:
     commands:
       - echo dependancies
       - pip3 install cdk
+      - npm install aws-cdk@latest
       - pip3 install Requests
       - pip3 install BeautifulSoup4
       - pip3 install boto3
 
   build:
     commands:
-      - cdk deploy
+      - cdk deploy --force
       # cdk deploy --force #??
 
   post_build:
