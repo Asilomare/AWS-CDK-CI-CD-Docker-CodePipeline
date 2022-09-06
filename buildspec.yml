@@ -1,26 +1,24 @@
 version: 0.2
 phases:
   install:
-    runtime-versions:
-      python: 3.9
     commands:
       # Install packages or any pre-reqs in this phase.
       # Upgrading SAM CLI to latest version
-      - python3 -m venv .env
-      - chmod +x .env/bin/activate
-      - . .env/bin/activate
+      - echo nothing
       
   pre_build:
     commands:
       - echo dependancies
-      - npm install --upgrade cdk
+      - pip3 install cdk
       - pip3 install Requests
       - pip3 install BeautifulSoup4
       - pip3 install boto3
 
   build:
     commands:
-      - cdk deploy
+      - cd 
+      - cdk deploy --force
+      # cdk deploy --force #??
 
   post_build:
     commands:
