@@ -4,23 +4,26 @@ phases:
     commands:
       # Install packages or any pre-reqs in this phase.
       # Upgrading SAM CLI to latest version
-      - echo 
-      #pip3 install --upgrade aws-sam-cli
-      
-      # pip3 install cdk
-      # pip3 install Requests, BeautifulSoup4, boto3
+      - echo nothing
       
   pre_build:
     commands:
-      - echo
+      - echo dependancies
+      - pip3 install --upgrade aws-sam-cli
+      - pip3 install cdk
+      - pip3 install Requests, BeautifulSoup4, boto3
 
   build:
     commands:
-      - echo
+      - cdk synth
+      - cdk deploy --force
       # cdk deploy --force #??
 
   post_build:
     commands:
-      - echo
+      - echo finished
 
-
+artifacts:
+  discard-paths: no
+  files:
+    - "**/*"
