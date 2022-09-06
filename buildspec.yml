@@ -1,16 +1,22 @@
 version: 0.2
 phases:
   install:
+    runtime-versions:
+      python: 3.9
     commands:
       # Install packages or any pre-reqs in this phase.
       # Upgrading SAM CLI to latest version
-      - echo npthinjg
-
+      - npm install -g aws-cdk
+      - cdk --version
+      - python3 -m venv .env
+      - chmod +x .env/bin/activate
+      - . .env/bin/activate
+      - pip3 install -r requirements.txt
       
   pre_build:
     commands:
       - echo dependancies
-      - npm install
+ 
       - pip3 install Requests
       - pip3 install BeautifulSoup4
       - pip3 install boto3
