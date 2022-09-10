@@ -21,7 +21,7 @@ phases:
 
   post_build:
     commands:
-      - echo finished
+      - cdk synth
 
 artifacts:
   discard-paths: no
