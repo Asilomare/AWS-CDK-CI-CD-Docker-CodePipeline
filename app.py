@@ -1,7 +1,6 @@
-import aws_cdk as cdk
-from pipeline_stack import MyPipelineStack
+from aws_cdk import (App, Stack)
+from lambda_stack import LambdaLayerStack
 
-app = cdk.App()
-MyPipelineStack(app, "MyPipelineStack")
-
+app = App()
+LambdaLayerStack(app, "lambda-cdk")
 app.synth()
