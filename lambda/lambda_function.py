@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import boto3
 import json
+import os
 
 s3 = boto3.client('s3')
 
@@ -11,7 +12,7 @@ def handler(event, context):
     soup = BeautifulSoup(page.content, "html.parser")
     results = soup.findAll("div", class_='maincounter-number')
     
-    bucket = 'webscraperbucket123123'
+    bucket = os.environ["bucket"]
     
     transcationToUpload = {}
     transcationToUpload['cases'] = results[0].text.strip()
