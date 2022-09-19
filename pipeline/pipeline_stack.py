@@ -21,7 +21,7 @@ class PipelineStack(cdk.Stack):
                         pipeline_name="Pipeline",
                         synth=ShellStep("Synth", 
                             input=source,
-                            commands=["python -m pip install -r lambda-requirements.txt -t lambda",
+                            commands=[
                                 "python -m pip install -r requirements.txt",
                                 "npx cdk synth"]
                         )
