@@ -23,7 +23,8 @@ class PipelineStack(cdk.Stack):
                             input=source,
                             commands=[
                                 "python -m pip install -r requirements.txt",
-                                "npx cdk synth"]
+                                "npx cdk synth",
+                                "pytest unittests"]
                         )
                     )
         pipeline.add_stage(LambdaStage(self, 'lambdastage'))
