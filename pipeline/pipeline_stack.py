@@ -1,4 +1,4 @@
-import aws_cdk as cdk
+"""import aws_cdk as cdk
 from constructs import Construct
 from aws_cdk.pipelines import CodePipeline, CodePipelineSource, ShellStep
 
@@ -28,3 +28,4 @@ class PipelineStack(cdk.Stack):
                         )
                     )
         pipeline.add_stage(LambdaStage(self, 'lambdastage'))
+"""
