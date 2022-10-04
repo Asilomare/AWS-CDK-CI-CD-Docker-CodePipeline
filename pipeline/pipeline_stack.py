@@ -24,8 +24,8 @@ class PipelineStack(cdk.Stack):
                             commands=[
                                 "python -m pip install -r requirements-dev.txt",
                                 "python -m pip install -r requirements.txt",
-                                "npx cdk synth",
-                                "npx pytest unittests"
+                                "npx pytest unittests",
+                                "npx cdk synth"
                                 ]
                         )
                     )
