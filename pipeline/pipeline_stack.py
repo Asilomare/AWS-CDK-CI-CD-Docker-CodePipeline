@@ -22,9 +22,7 @@ class PipelineStack(cdk.Stack):
                         synth=ShellStep("Synth", 
                             input=source,
                             commands=[
-                                "python -m pip install -r requirements-dev.txt",
                                 "python -m pip install -r requirements.txt",
-                                "npx pytest unittests",
                                 "npx cdk synth"
                                 ]
                         )
