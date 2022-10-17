@@ -23,6 +23,7 @@ class PipelineStack(cdk.Stack):
                             input=source,
                             commands=[
                                 "python -m pip install -r requirements.txt",
+                                "npx pytest unittests",
                                 "npx cdk synth"
                                 ]
                         )
