@@ -12,8 +12,7 @@ class LambdaStack(Stack):
         super().__init__(app, id)
 
         bucket = s3.Bucket(self, "WebScraperDumpBucket")
-        
-        
+
         #lambda from docker image
         function = _lambda.DockerImageFunction(self, "lambda_function_docker",
             code=_lambda.DockerImageCode.from_image_asset(
@@ -23,7 +22,7 @@ class LambdaStack(Stack):
                  "bucket": bucket.bucket_name,
             }
         )
-    
+        
         bucket.grant_put(function)
         
         #eventbridge daily trigger
@@ -31,5 +30,3 @@ class LambdaStack(Stack):
             schedule=events.Schedule.cron(minute="0", hour="5", week_day="*", month="*", year="*")
         )
         rule.add_target(targets.LambdaFunction(function))
-        
-        
