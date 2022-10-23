@@ -12,7 +12,6 @@ class LambdaStage(cdk.Stage):
         LambdaStack(self, "LambdaStack")
 
 class PipelineStack(cdk.Stack):
-
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
@@ -27,17 +26,13 @@ class PipelineStack(cdk.Stack):
                                 ]
                         )
                     )
-        
         #lambda test 
         function = Function.from_function_name(self,
             "lambda_function_docker", "lambda_function_docker"
-            )
+        )
         codepipeline_actions.LambdaInvokeAction(
             action_name = "invoke_Lambda_Action",
             lambda_ = function
-            )
-            
+        ) 
         #lambda stage           
         pipeline.add_stage(LambdaStage(self, 'lambdastage'))
-        #invoke lambda stage
-
