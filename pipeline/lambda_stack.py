@@ -24,6 +24,7 @@ class LambdaStack(Stack):
         )
         
         bucket.grant_put(function)
+        bucket.grant_read(function)
         
         #eventbridge daily trigger
         rule = events.Rule(self, "Run Daily",
